@@ -1,0 +1,30 @@
+{
+  "name": "starter-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A minimal monorepo setup for building full-stack projects with Nuxt and Nest using pnpm.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "prepare": "simple-git-hooks",
+    "build": "pnpm build:packages && pnpm build:apps",
+    "build:packages": "pnpm --filter \"./packages/**\" prepack",
+    "build:apps": "pnpm --filter \"./apps/**\" build",
+    "dev": "pnpm --filter frontend dev & pnpm --filter backend start:dev",
+    "dev:prepare": "pnpm build:packages --stub",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "test:e2e": "pnpm -r test:e2e"
+  },
+  "packageManager": "pnpm@9.10.0",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "devDependencies": {
+    "lint-staged": "^15.2.10",
+    "simple-git-hooks": "^2.11.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  }
+}
