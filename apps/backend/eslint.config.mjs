@@ -6,4 +6,5 @@ export default antfu({
   typescript: {
     tsconfigPath: 'tsconfig.json',
   },
+  ignores: ['**/prisma'],
 })
