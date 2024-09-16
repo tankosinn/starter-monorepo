@@ -6,6 +6,7 @@
     "experimentalDecorators": true,
     "baseUrl": "./",
     "module": "commonjs",
+    "types": ["vitest/globals"],
     "strictBindCallApply": true,
     "strictNullChecks": true,
     "noFallthroughCasesInSwitch": true,
